@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.RufflePlayer.config = { autoplay: "on", unmuteOverlay: "hidden" };
+    </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta
+      name="description"
+      content='"PSP"版 新世紀エヴァンゲリオン2 造られしセカイ-another cases-公式サイト'
+    />
+    <meta
+      name="keywords"
+      content="新世紀エヴァンゲリオン2,PSP,ゲーム,10周年,バンダイ,碇シンジ,初号機,造られしセカイ,ゲーム"
+    />
+    <title>新世紀エヴァンゲリオン2 造られしセカイ- another cases</title>
+    <!-- <link
+      href="/web/20070324040945cs_/http://www.bandaigames.channel.or.jp/list/psp_eva2/css/seet.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <script language="JavaScript" type="text/javascript">
+      <!--
+      // -----------------------------------------------------------------------------
+      // Globals
+      // Major version of Flash required
+      var requiredMajorVersion = 8;
+      // Minor version of Flash required
+      var requiredMinorVersion = 0;
+      // Minor version of Flash required
+      var requiredRevision = 0;
+      // the version of javascript supported
+      var jsVersion = 1.0;
+      // -----------------------------------------------------------------------------
+      // -->
+    </script>
+    <script language="JavaScript">
+      <!--
+      // ウィンドウを揺らす
+      itv = 50; // ウィンドウを揺らす間隔(ミリ秒単位)
+      cnt = 0;
+      // ウィンドウを揺らすパターン。x座標・y座標
+      x = new Array(6, -6, 5, -5, 4, -4, 3, -3, 2, -2, 0, 0);
+      y = new Array(-12, 12, -8, 8, -6, 6, -4, 4, -2, 2, 0, 0);
+      function quakeWindow() {
+        if (x[cnt] != 0) moveBy(x[cnt], y[cnt]);
+        cnt++;
+        if (cnt < x.length) setTimeout("quakeWindow()", itv);
+        else cnt = 0;
+      }
+      //-->
+    </script>
+    <script language="VBScript" type="text/vbscript">
+      <!-- // Visual basic helper required to detect Flash Player ActiveX control version information
+      Function VBGetSwfVer(i)
+      on error resume next
+      Dim swControl, swVersion
+      swVersion = 0
+
+      set swControl = CreateObject("ShockwaveFlash.ShockwaveFlash." + CStr(i))
+      if (IsObject(swControl)) then
+      swVersion = swControl.GetVariable("$version")
+      end if
+      VBGetSwfVer = swVersion
+      End Function
+      // -->
+    </script>
+    <script language="JavaScript1.1" type="text/javascript">
+      <!-- // Detect Client Browser type
+      var isIE = navigator.appVersion.indexOf("MSIE") != -1 ? true : false;
+      var isWin =
+        navigator.appVersion.toLowerCase().indexOf("win") != -1 ? true : false;
+      var isOpera = navigator.userAgent.indexOf("Opera") != -1 ? true : false;
+      jsVersion = 1.1;
+      // JavaScript helper required to detect Flash Player PlugIn version information
+      function JSGetSwfVer(i) {
+        // NS/Opera version >= 3 check for Flash plugin in plugin array
+        if (navigator.plugins != null && navigator.plugins.length > 0) {
+          if (
+            navigator.plugins["Shockwave Flash 2.0"] ||
+            navigator.plugins["Shockwave Flash"]
+          ) {
+            var swVer2 = navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : "";
+            var flashDescription =
+              navigator.plugins["Shockwave Flash" + swVer2].description;
+            descArray = flashDescription.split(" ");
+            tempArrayMajor = descArray[2].split(".");
+            versionMajor = tempArrayMajor[0];
+            versionMinor = tempArrayMajor[1];
+            if (descArray[3] != "") {
+              tempArrayMinor = descArray[3].split("r");
+            } else {
+              tempArrayMinor = descArray[4].split("r");
+            }
+            versionRevision = tempArrayMinor[1] > 0 ? tempArrayMinor[1] : 0;
+            flashVer =
+              versionMajor + "." + versionMinor + "." + versionRevision;
+          } else {
+            flashVer = -1;
+          }
+        }
+        // MSN/WebTV 2.6 supports Flash 4
+        else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.6") != -1)
+          flashVer = 4;
+        // WebTV 2.5 supports Flash 3
+        else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.5") != -1)
+          flashVer = 3;
+        // older WebTV supports Flash 2
+        else if (navigator.userAgent.toLowerCase().indexOf("webtv") != -1)
+          flashVer = 2;
+        // Can't detect in all other cases
+        else {
+          flashVer = -1;
+        }
+        return flashVer;
+      }
+      // When called with reqMajorVer, reqMinorVer, reqRevision returns true if that version or greater is available
+      function DetectFlashVer(reqMajorVer, reqMinorVer, reqRevision) {
+        reqVer = parseFloat(reqMajorVer + "." + reqRevision);
+        // loop backwards through the versions until we find the newest version
+        for (i = 25; i > 0; i--) {
+          if (isIE && isWin && !isOpera) {
+            versionStr = VBGetSwfVer(i);
+          } else {
+            versionStr = JSGetSwfVer(i);
+          }
+          if (versionStr == -1) {
+            return false;
+          } else if (versionStr != 0) {
+            if (isIE && isWin && !isOpera) {
+              tempArray = versionStr.split(" ");
+              tempString = tempArray[1];
+              versionArray = tempString.split(",");
+            } else {
+              versionArray = versionStr.split(".");
+            }
+            versionMajor = versionArray[0];
+            versionMinor = versionArray[1];
+            versionRevision = versionArray[2];
+
+            versionString = versionMajor + "." + versionRevision; // 7.0r24 == 7.24
+            versionNum = parseFloat(versionString);
+            // is the major.revision >= requested major.revision AND the minor version >= requested minor
+            if (versionMajor > reqMajorVer && versionNum >= reqVer) {
+              return true;
+            } else {
+              return versionNum >= reqVer && versionMinor >= reqMinorVer
+                ? true
+                : false;
+            }
+          }
+        }
+      }
+      // -->
+    </script>
+  </head>
+
+  <body
+    bgcolor="#000000"
+    leftmargin="0"
+    topmargin="0"
+    bottommargin="0"
+    rightmargin="0"
+  >
+    <script language="JavaScript" type="text/javascript">
+      <!--
+
+      //Flash Player のバージョン判定をしている箇所。 ここで、Flash Player 6r65 以降がインストールされているか確認しています。
+      // Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+      var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+      // Version check based upon the values entered above in "Globals"
+      var hasReqestedVersion = DetectFlashVer(
+        requiredMajorVersion,
+        requiredMinorVersion,
+        requiredRevision
+      );
+
+      //インストール後に表示されるページを指定。標準では、インストールを開始したドキュメントを指しています。
+      //インストール後に他のページを表示したい場合は、ここでターゲットの URL を指定します。
+      //(例) var MMredirectURL = "www.example.com/exsample.html";
+      // Location visited after installation is complete if installation is required
+      var MMredirectURL = window.location;
+
+      //インストール完了時に自動的に閉じるウインドウを指定するための記述。これは IE のみに有効。（他のブラウザは全てのウインドウを閉じるため）
+      // Stored value of document title used by the installation process to close the window that started the installation process
+      // This is necessary to remove browser windows that will still be utilizing the older version of the player after installation is complete
+      // DO NOT MODIFY THE FOLLOWING TWO LINES
+      document.title =
+        document.title.slice(0, 47) + " - Flash Player Installation";
+      var MMdoctitle = document.title;
+
+      // Check to see if a player with Flash Product Install is available and the version does not meet the requirements for playback
+      if (hasProductInstall && !hasReqestedVersion) {
+        var productInstallOETags =
+          '<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">' +
+          "<tr>" +
+          '<td align="center" valign="middle"><table width="900" border="0" cellspacing="0" cellpadding="0">' +
+          "<tr>" +
+          "<td>" +
+          '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="900" height="605">' +
+          '<param name="movie" value="playerProductInstall.swf">' +
+          '<param name="quality" value="high">' +
+          '<param name="menu" value="false">' +
+          '<embed src="playerProductInstall.swf" width="900" height="605" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" menu="false"></embed>' +
+          "</object></td></tr>" +
+          "<tr>" +
+          '<td><img src="image/footer.jpg" width="900" height="105" border="0" usemap="#Map"></td>' +
+          "</tr>" +
+          "</table></td></tr></table>" +
+          '<map name="Map"><area shape="rect" coords="39,57,81,98" href="http://www.bandai.co.jp/" target="_blank">' +
+          '<area shape="rect" coords="359,49,528,104" href="http://www.bandaigames.channel.or.jp/" target="_blank">' +
+          '<area shape="rect" coords="697,4,899,47" href=javascript:void(window.open("owabi/index.html","","width=448,height=500","scrollbars=yes"))>' +
+          "</map>";
+        document.write(productInstallOETags); // embed the Flash Product Installation SWF
+      } else if (hasReqestedVersion) {
+        // if we've detected an acceptable version
+        var oeTags =
+          '<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">' +
+          "<tr>" +
+          '<td align="center" valign="middle"><table width="900" border="0" cellspacing="0" cellpadding="0">' +
+          "<tr>" +
+          "<td>" +
+          '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="900" height="605">' +
+          '<param name="movie" value="op.swf">' +
+          '<param name="quality" value="high">' +
+          '<param name="menu" value="false">' +
+          '<embed src="op.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="900" height="605" menu="false"></embed>' +
+          "</object></td></tr>" +
+          "<tr>" +
+          '<td><img src="image/footer.jpg" width="900" height="105" border="0" usemap="#Map"></td>' +
+          "</tr>" +
+          "</table></td></tr></table>" +
+          '<map name="Map">' +
+          '<area shape="rect" coords="39,57,81,98" href="http://www.bandai.co.jp/" target="_blank">' +
+          '<area shape="rect" coords="359,49,528,104" href="http://www.bandaigames.channel.or.jp/" target="_blank">' +
+          '<area shape="rect" coords="697,4,899,47" href=javascript:void(window.open("owabi/index.html","","width=432,height=500","scrollbars=yes"))>' +
+          "</map>";
+        document.write(oeTags); // embed the Flash Content SWF when all tests are passed
+      } else {
+        // flash is too old or we can't detect the plugin
+        var alternateContent =
+          "Alternate HTML content should be placed here." +
+          "This content requires the Macromedia Flash Player." +
+          "<a href=http://www.macromedia.com/go/getflash/>Get Flash</a>";
+        document.write(alternateContent); // insert non-flash content
+      }
+      // -->
+    </script>
+    <noscript>
+      <font color="#FFFFFF"
+        >//このページを正しくご覧頂くにはFLASH
+        PLAYER8が必要です。自動でインストールが始まらない場合は</font
+      ><a
+        href="http://www.macromedia.com/shockwave/download/download.cgi?P5_Language=Japanese&amp;Lang=Japanese&amp;P1_Prod_Version=ShockwaveFlash&amp;Lang=Japanese"
+        target="_blank"
+        >コチラ</a
+      ><font color="#FFFFFF">からDLしてください。</font>
+    </noscript>
+  </body>
+</html>
+<!--
+     FILE ARCHIVED ON 04:09:45 Mar 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:44:32 Jul 18, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.532
+  exclusion.robots: 0.035
+  exclusion.robots.policy: 0.024
+  esindex: 0.014
+  cdx.remote: 189.795
+  LoadShardBlock: 1700.451 (3)
+  PetaboxLoader3.datanode: 1263.888 (4)
+  PetaboxLoader3.resolve: 926.252 (2)
+  load_resource: 685.134
+-->
